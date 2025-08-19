@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Tire Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Truck Tire & Mechanics Shop</h1>
+        <p>Use the form below to look up truck details and track parts.</p>
+    </header>
+
+    <section id="vin-section">
+        <h2>VIN Lookup</h2>
+        <input type="text" id="vin-input" placeholder="Enter VIN" />
+        <button id="decode-btn">Decode VIN</button>
+        <div id="truck-info"></div>
+    </section>
+
+    <section id="parts-section" style="display:none;">
+        <h2>Parts for this VIN</h2>
+        <ul id="parts-list"></ul>
+        <input type="text" id="part-input" placeholder="Add a part" />
+        <button id="add-part-btn">Add Part</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
