@@ -3,50 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JGar Semi Truck Tire Shop</title>
+    <title>Mechanic & Tire Shop | VIN Decoder & Parts Finder</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>JGar Semi Truck Tire Shop</h1>
-        <p>Your One-Stop Mechanic and Tire Shop for Semi Trucks</p>
+    <header class="site-header">
+        <div class="container header-layout">
+            <a href="#" class="logo">JGar Fleet &amp; Tire</a>
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#vin-decoder">VIN Decoder</a></li>
+                    <li><a href="#parts-catalog">Parts Catalog</a></li>
+                    <li><a href="#tire-center">Tire Center</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="tel:+11234567890">Call (123) 456-7890</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Diesel Shop &amp; Tire Specialists</p>
+                    <h1>Decode Semi-Truck VINs, Find Parts, and Roll Out Fast</h1>
+                    <p>We combine dealership-grade diagnostics with a stocked tire cage. Drop a 17-digit VIN to verify build data, match parts, and get your rig back on the highway.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn--primary" href="#vin-decoder">Start Decoding</a>
+                        <a class="btn btn--ghost" href="#services">Shop Services</a>
+                    </div>
+                </div>
+                <div class="hero-card" aria-live="polite">
+                    <h2>Most Recent Decode</h2>
+                    <dl id="recent-decode">
+                        <div><dt>VIN</dt><dd>—</dd></div>
+                        <div><dt>Make</dt><dd>—</dd></div>
+                        <div><dt>Model</dt><dd>—</dd></div>
+                        <div><dt>Engine</dt><dd>—</dd></div>
+                        <div><dt>Key Parts</dt><dd>—</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We specialize in providing top-quality mechanic services and tires for semi trucks. Our experienced team is dedicated to keeping your fleet on the road, safely and efficiently.</p>
-    </section>
+        <section id="services" class="section section--alt">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2>Full-Service Shop for Heavy-Duty Fleets</h2>
+                        <p>From in-frame engine work to tire rotations and DOT inspections, we keep your tractors and trailers road-ready.</p>
+                    </div>
+                    <a class="link" href="tel:+11234567890">24/7 Road Calls →</a>
+                </div>
 
-    <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>Full-Service Semi Truck Maintenance</li>
-            <li>Tire Sales and Installation</li>
-            <li>24/7 Roadside Assistance</li>
-        </ul>
-    </section>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <h3>Diesel Repair</h3>
+                        <p>Aftertreatment, clutch replacements, electrical diagnostics, PMs, and warranty guidance from ASE-certified techs.</p>
+                        <ul>
+                            <li>Factory-grade diagnostic tooling</li>
+                            <li>Preventive maintenance while you wait</li>
+                            <li>Brake, wheel-end, and suspension repairs</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3>Mobile &amp; Road Service</h3>
+                        <p>24/7 dispatch for roadside tire swaps, jump starts, and on-site repairs that get you back under load fast.</p>
+                        <ul>
+                            <li>Rapid ETA updates to dispatch</li>
+                            <li>On-site battery tests and replacements</li>
+                            <li>Load-seal friendly service documentation</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3>Tire Program</h3>
+                        <p>Commercial tire mounting, balancing, and retread sourcing with inventory matched to your axle specs.</p>
+                        <ul>
+                            <li>Top brands plus mixed-service tread patterns</li>
+                            <li>Steer, drive, and trailer sets in stock</li>
+                            <li>TPMS checks and torque verification</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <address>
-            <p>Email: <a href="mailto:info@jgartire.com">info@jgartire.com</a></p>
-            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
-            <p>Location: 123 Trucking Way, Transport City</p>
-        </address>
-    </section>
+        <section id="vin-decoder" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2>VIN Decoder</h2>
+                        <p>Use this tool to verify build specs, match service parts, and prep tires before the truck hits the bay.</p>
+                    </div>
+                    <div class="decoder-stats">
+                        <div>
+                            <span class="stat">14,500+</span>
+                            <span class="label">VINs decoded for fleets last year</span>
+                        </div>
+                        <div>
+                            <span class="stat">98%</span>
+                            <span class="label">Parts matched on first visit</span>
+                        </div>
+                    </div>
+                </div>
 
-    <footer>
-        <p>&copy; 2023 JGar Semi Truck Tire Shop. All rights reserved.</p>
+                <form id="vin-form" class="decoder-form" autocomplete="off">
+                    <label for="vin-input">Enter VIN</label>
+                    <div class="input-group">
+                        <input id="vin-input" name="vin" type="text" minlength="17" maxlength="23" placeholder="e.g. 1HSHWSBN3LH123456" required>
+                        <button type="submit" class="btn btn--primary">Decode VIN</button>
+                    </div>
+                    <p class="helper">Tip: Paste or scan the VIN—spaces and dashes are removed automatically. We support Freightliner, International, Kenworth, Peterbilt, Volvo, and Mack formats.</p>
+                </form>
+
+                <div id="vin-result" class="decoder-result" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="parts-catalog" class="section section--alt">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2>Featured Components On the Shelf</h2>
+                        <p>Matched directly from the decoder so your service advisor can pull stock instantly—plus tire sets that fit your specs.</p>
+                    </div>
+                    <a class="link" href="mailto:parts@jgarfleet.com">Request full catalog →</a>
+                </div>
+
+                <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+            <div class="container steps">
+                <article>
+                    <span class="step-number">1</span>
+                    <h3>Scan the VIN</h3>
+                    <p>Use our mobile scanner or type it in manually. We validate the VIN structure, remove spaces or dashes, and confirm manufacturer codes instantly.</p>
+                </article>
+                <article>
+                    <span class="step-number">2</span>
+                    <h3>Review Build Sheet</h3>
+                    <p>See drivetrain, emissions package, brake system, axle data, and recommended tire sizes that inform the right selection.</p>
+                </article>
+                <article>
+                    <span class="step-number">3</span>
+                    <h3>Grab the Right Parts</h3>
+                    <p>Click through to the stocked part numbers, pick up a mounted tire set, or dispatch our team to deliver curbside to your bay.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="tire-center" class="section section--highlight">
+            <div class="container tire-layout">
+                <div>
+                    <h2>Tire Center</h2>
+                    <p>Steer, drive, and trailer positions in stock with retread options and torque-verified installs.</p>
+                    <ul class="support-list">
+                        <li>Michelin, Bridgestone, Goodyear, and mixed-service options</li>
+                        <li>Mounting, balancing, and TPMS checks</li>
+                        <li>Fleet pricing and casing management</li>
+                    </ul>
+                </div>
+                <div class="support-card">
+                    <h3>Ready for a Tire Swap?</h3>
+                    <p><strong>Road Service:</strong> <a href="tel:+11234567890">(123) 456-7890</a></p>
+                    <p><strong>Shop Hours:</strong> Mon–Sat, 6a–10p</p>
+                    <p><strong>Email:</strong> <a href="mailto:tires@jgarfleet.com">tires@jgarfleet.com</a></p>
+                    <a class="btn btn--light" href="mailto:tires@jgarfleet.com?subject=Schedule%20Tire%20Service">Schedule Tire Service</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="section section--highlight">
+            <div class="container support-grid">
+                <div>
+                    <h2>Need a VIN Added?</h2>
+                    <p>Our data team can load in fleet VINs, cross-reference OEM bulletins, and set up automatic maintenance alerts.</p>
+                    <ul class="support-list">
+                        <li>Bulk VIN onboarding &amp; fleet tagging</li>
+                        <li>Live chat with master technicians</li>
+                        <li>Automatic tire rotation reminders</li>
+                    </ul>
+                </div>
+                <div class="support-card">
+                    <h3>Contact Dispatch</h3>
+                    <p><strong>24/7 Road Calls:</strong> <a href="tel:+11234567890">(123) 456-7890</a></p>
+                    <p><strong>Shop:</strong> 123 Trucking Way, Transport City, USA</p>
+                    <p><strong>Email:</strong> <a href="mailto:service@jgarfleet.com">service@jgarfleet.com</a></p>
+                    <a class="btn btn--light" href="mailto:data@jgarfleet.com">Upload Fleet VIN List</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-layout">
+            <p>© <span id="current-year"></span> JGar Fleet &amp; Tire. Heavy-duty VIN decoding and part sourcing.</p>
+            <nav aria-label="Footer">
+                <a href="#vin-decoder">VIN Decoder</a>
+                <a href="#parts-catalog">Parts</a>
+                <a href="#support">Support</a>
+            </nav>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>
