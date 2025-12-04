@@ -1,43 +1,603 @@
+:root {
+    --bg: #080b11;
+    --primary: #ff6b35;
+    --accent: #ffc947;
+    --slate: #1d2130;
+    --slate-light: #2b3044;
+    --text: #f5f7ff;
+    --muted: #9aa0ba;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    --radius: 18px;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: "Barlow", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #05070c 0%, #0b0f1a 40%, #101728 100%);
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent);
+}
+
+.container {
+    width: min(1100px, 90vw);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: rgba(8, 11, 17, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.75rem;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.main-nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
 }
 
-nav ul {
+.cta {
+    background: var(--primary);
+    color: #06070d;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 999px;
+}
+
+.hero {
+    padding: 6rem 0 5rem;
+}
+
+.hero-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    margin-bottom: 1rem;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.hero-copy p {
+    color: var(--muted);
+    max-width: 30rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--primary {
+    background: var(--primary);
+    color: #06070d;
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    transform: translateY(-2px);
+}
+
+.btn--ghost {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: transparent;
+}
+
+.btn--light {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--text);
+}
+
+.hero-card {
+    background: var(--slate);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+    margin-top: 0;
+}
+
+.hero-card dl {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.hero-card dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+}
+
+.hero-card dd {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section--alt {
+    background: rgba(17, 24, 39, 0.65);
+}
+
+.section--highlight {
+    background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.18), rgba(11, 15, 26, 0.95));
+}
+
+.section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 32rem;
+}
+
+.decoder-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.label {
+    color: var(--muted);
+    display: block;
+    margin-top: 0.4rem;
+    max-width: 12rem;
+}
+
+.decoder-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 0.95rem 1.2rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(13, 18, 30, 0.85);
+    color: var(--text);
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.helper {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+}
+
+.decoder-result {
+    margin-top: 2.5rem;
+}
+
+.result-card {
+    background: var(--slate);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.result-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.vin-tag {
+    font-family: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    letter-spacing: 0.16em;
+    font-size: 0.85rem;
+}
+
+.result-body {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.75rem;
+}
+
+.specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.specs dt {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+}
+
+.specs dd {
+    margin: 0.4rem 0 0;
+}
+
+.parts ul,
+.part-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.parts li,
+.part-list li {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(12, 17, 28, 0.8);
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.parts li strong {
+    display: block;
+    font-family: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+}
+
+.parts li span.tag,
+.tag {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    background-color: #f4f4f4;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text);
 }
 
-nav ul li {
-    margin: 0 15px;
+.tag--outline {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
 }
 
-section {
-    padding: 20px;
+.catalog-card {
+    background: var(--slate);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
-footer {
-    background-color: #333;
-    color: white;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: rgba(12, 17, 28, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: grid;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.service-card p {
+    color: var(--muted);
+}
+
+.service-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.service-card li::before {
+    content: "•";
+    margin-right: 0.5rem;
+    color: var(--accent);
+}
+
+.catalog-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog-card .notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.part-number {
+    font-family: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9rem;
+}
+
+.part-name {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.steps {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.steps article {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.step-number {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #06070d;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section--highlight .support-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: stretch;
+}
+
+.support-list {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.support-list li::before {
+    content: "✔";
+    margin-right: 0.6rem;
+    color: var(--accent);
+}
+
+.support-card {
+    background: rgba(12, 17, 28, 0.85);
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 0.9rem;
+}
+
+.tire-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    background: rgba(8, 11, 17, 0.85);
+}
+
+.footer-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer-layout nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.result-card--empty,
+.result-card--error,
+.result-card--info {
     text-align: center;
-    padding: 10px;
+}
+
+.result-card--error {
+    border: 1px solid rgba(255, 79, 79, 0.45);
+    background: rgba(145, 23, 23, 0.2);
+}
+
+.result-card--info {
+    border: 1px solid rgba(255, 201, 71, 0.5);
+    background: rgba(255, 201, 71, 0.18);
+}
+
+.result-card--empty {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 860px) {
+    .main-nav ul {
+        position: fixed;
+        inset: 0 auto 0 0;
+        background: rgba(5, 7, 12, 0.96);
+        flex-direction: column;
+        padding: 6rem 2.5rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    body.nav-open .main-nav ul {
+        transform: translateX(0);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .cta {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding-top: 5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .decoder-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
